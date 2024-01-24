@@ -1,6 +1,7 @@
 import "./ExpenseDetails.css";
 
 const ExpenseDetails = (props) => {
+  // console.log("expense details props children are " + props.children);
   const title = props.title;
   const amount = props.amount;
   const location = props.location;

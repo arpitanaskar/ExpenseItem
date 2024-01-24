@@ -14,9 +14,9 @@ const ExpenseItem = (props) => {
         title={props.title}
         amount={props.amount}
         location={props.locationOfExpenditure}
-
         // { this locationOfExpenditure is getting passed from App.js where the data mainly belongs.}
       />
+      <button>Delete</button>
     </Card>
   );
 };
