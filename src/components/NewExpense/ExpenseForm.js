@@ -3,7 +3,7 @@ import "./ExpenseForm.css";
 import { useState } from "react";
 // import ExpenseItem from "../Expenses/ExpenseItem";
 
-const ExpenseForm = () => {
+const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [updateDate, setUpdateDate] = useState("");
@@ -35,7 +35,12 @@ const ExpenseForm = () => {
       location: enteredLocation,
     };
 
-    console.log(expenseData);
+    props.onSaveExpenseData(expenseData);
+
+    setEnteredTitle("");
+    setEnteredLocation(""); //This is two way binding. This is clearing the data which is value in the input fields of form.
+    setEnteredAmount("");
+    setUpdateDate("");
   };
 
   return (
@@ -43,7 +48,11 @@ const ExpenseForm = () => {
       <div className="new-expense__controls">
         <div className="new-expense__control">
           <label>Title</label>
-          <input type="text" onChange={titleChangeHandler} />
+          <input
+            type="text"
+            value={enteredTitle}
+            onChange={titleChangeHandler}
+          />
         </div>
 
         <div className="new-expense__control">
@@ -52,6 +61,7 @@ const ExpenseForm = () => {
             type="number"
             min="0.01"
             step="0.01"
+            value={enteredAmount}
             onChange={amountChangeHandler}
           />
         </div>
@@ -62,13 +72,18 @@ const ExpenseForm = () => {
             type="date"
             min="2019-01-01"
             max="2024-01-01"
+            value={updateDate}
             onChange={dateChangeHandler}
           />
         </div>
 
         <div className="new-expense__control">
           <label>Location</label>
-          <input type="text" onChange={locationChangeHandler} />
+          <input
+            type="text"
+            value={enteredLocation}
+            onChange={locationChangeHandler}
+          />
         </div>
       </div>
 
