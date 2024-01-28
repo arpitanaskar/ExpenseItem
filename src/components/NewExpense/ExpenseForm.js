@@ -35,7 +35,7 @@ const ExpenseForm = (props) => {
       location: enteredLocation,
     };
 
-    props.onSaveExpenseData(expenseData);
+    props.onSaveExpenseData(expenseData); //passing the data from child to parent. Form o NewExpense by props functions.
 
     setEnteredTitle("");
     setEnteredLocation(""); //This is two way binding. This is clearing the data which is value in the input fields of form.
@@ -71,7 +71,7 @@ const ExpenseForm = (props) => {
           <input
             type="date"
             min="2019-01-01"
-            max="2024-01-01"
+            max={new Date().toISOString().split("T")[0]}
             value={updateDate}
             onChange={dateChangeHandler}
           />

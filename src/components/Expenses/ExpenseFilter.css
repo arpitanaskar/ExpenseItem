@@ -5,6 +5,7 @@
 .expenses-filter__control {
   display: flex;
   align-items: center;
+  justify-content: space-between;
 }
 
 .expenses-filter__control label {

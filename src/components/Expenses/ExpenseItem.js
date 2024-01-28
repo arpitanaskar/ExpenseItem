@@ -20,8 +20,7 @@ const ExpenseItem = (props) => {
       <ExpenseDetails
         title={title}
         amount={props.amount}
-        location={props.locationOfExpenditure}
-        // { this locationOfExpenditure is getting passed from App.js where the data mainly belongs.}
+        location={props.location}
       />
       <button onClick={clickHandler}>Change Title</button>
       <button>Delete</button>
