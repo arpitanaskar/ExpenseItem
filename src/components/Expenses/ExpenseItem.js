@@ -12,19 +12,21 @@ const ExpenseItem = (props) => {
   };
 
   return (
-    <Card className="expense-item">
-      <ExpenseDate eDate={props.date} />
+    <li>
+      <Card className="expense-item">
+        <ExpenseDate eDate={props.date} />
 
-      {/* The variable name of date in the ExpenseDate and here when we are passing props, should be the same. "eDate". we can always use date. I used eDate for clearing my concept. */}
+        {/* The variable name of date in the ExpenseDate and here when we are passing props, should be the same. "eDate". we can always use date. I used eDate for clearing my concept. */}
 
-      <ExpenseDetails
-        title={title}
-        amount={props.amount}
-        location={props.location}
-      />
-      <button onClick={clickHandler}>Change Title</button>
-      <button>Delete</button>
-    </Card>
+        <ExpenseDetails
+          title={title}
+          amount={props.amount}
+          location={props.location}
+        />
+        <button onClick={clickHandler}>Change Title</button>
+        <button>Delete</button>
+      </Card>
+    </li>
   );
 };
 
